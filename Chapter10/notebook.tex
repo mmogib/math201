@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{10.1}
+    \title{10.2}
     
     
     
@@ -280,77 +280,65 @@
     
 
     
-    \section{10.1 Curves Defined by Parametric
-Equations}\label{curves-defined-by-parametric-equations}
+    \section{10.2 Calculus wuth Parametic
+Curves}\label{calculus-wuth-parametic-curves}
 
-Suppose that \(x\) and \(y\) are both given as functions of a third
-variable (called a \textbf{parameter}) by the equations \[
-x=f(t), \qquad y=g(t).
-\] These functions are called \textbf{parametric equations}.
+\subsection{Tangents}\label{tangents}
 
-\begin{itemize}
+Conisder the parametric equations \[
+x=f(t), \qquad y=g(t)
+\] and suppose that \(f\) and \(g\) are differentiable functions. Then
+\[
+\frac{dy}{dt} = \frac{dy}{dx}\cdot \frac{dx}{dt}
+\] If \(dx/dt \not = 0\), then \[
+\frac{dy}{dx} =\frac{\frac{dy}{dt}}{\frac{dx}{dt}}.
+\] Also, \[
+\frac{d^2y}{dx^2} =\frac{\frac{d^2y}{dtdx}}{\frac{dx}{dt}}.
+\]
+
+    \subsection{Example 1}\label{example-1}
+
+A curve \(C\) is defined by the parametric equations
+\(x=t^2, y=t^3-3t\).,
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  As \(t\) varies, the point \((x,y)=\left(f(t),g(t)\right)\) varies and
-  traces out a curve \(C\), which we call a \textbf{parametric curve}.
+  Show that has two tangents at the point (3, 0) and find their
+  equations.
 \item
-  The parameter t does not necessarily represent time.
-\end{itemize}
+  Find the points on \(C\) where the tangent is horizontal or vertical.
+\item
+  Determine where the curve is concave upward or downward.
+\item
+  Sketch the curve.
+\end{enumerate}
 
-    \subsection{Example 1:}\label{example-1}
+\textbf{SOLUTION IN CLASS}
 
-Sketch and identify the curve defined by the parametric equations \[
-x=t^2-2t, \qquad y=t+1.
+    \subsection{Example 2}\label{example-2}
+
+Conisder the cycloid
+\(x=r(\theta-\sin\theta), \quad y=r(1-\cos\theta)\). 1. Find the tangent
+at the point where \(\theta=\frac{\theta}{3}\). 2. At what points is the
+tangent horizontal? When is it vertical?
+
+\textbf{SOLUTION IN CLASS}
+
+    \subsection{Area}\label{area}
+
+Conisder the parametric equations \[
+x=f(t), \qquad y=g(t), \qquad \alpha \leq t \leq \beta
+\] Then \[
+A = \int_a^b y dx = \int_{\alpha}^{\beta} g(t) f'(t) dt \text{ or } \left( \int^{\alpha}_{\beta} g(t) f'(t) dt\right)
 \]
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}
-        \PY{k+kn}{from} \PY{n+nn}{sympy}\PY{n+nn}{.}\PY{n+nn}{plotting} \PY{k}{import} \PY{n}{plot\PYZus{}parametric}
-        \PY{n}{t} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{real}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
-        \PY{n}{x}\PY{o}{=}\PY{n}{t}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{t}
-        \PY{n}{y}\PY{o}{=}\PY{n}{t}\PY{o}{+}\PY{l+m+mi}{1}
-        \PY{n}{plot\PYZus{}parametric}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{p}{(}\PY{n}{t}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
+    \subsection{Example 3}\label{example-3}
 
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_2_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} <sympy.plotting.plot.Plot at 0x90aa630>
-\end{Verbatim}
-            
-    \subsection{In general,}\label{in-general}
-
-The curve with parametric equations \[
-x=f(t), \qquad y=g(t), \qquad a\leq t \leq b
-\] has \textbf{initial point} \((f(a),g(a))\) and \textbf{terminal
-point} \((f(b),g(b))\)
-
-    \subsection{Example 2:}\label{example-2}
-
-\[ 
-x=\cos t, \qquad y=\sin t, \qquad 0\leq t \leq 2\pi
-\]
-
-    \subsection{Example 3:}\label{example-3}
-
-\[ 
-x=\cos 2t, \qquad y=\sin 2t, \qquad 0\leq t \leq 2\pi
-\]
-
-    \subsection{Remark}\label{remark}
-
-\begin{itemize}
-\tightlist
-\item
-  A \textbf{curve} is a set of points.
-\item
-  A \textbf{parametric curve} is a set of points where those points are
-  traced in a prticular way.
-\end{itemize}
+Find the area under one arch of the cycloid \[
+x=r(\theta-\sin\theta), \quad y=r(1-\cos\theta)
+\] \textbf{SOLUTION IN CLASS}
 
 
     % Add a bibliography block to the postdoc
